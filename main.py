@@ -1,30 +1,6 @@
-# python3 list, tuple and dictionary
+import requests
+import beautifulsoup
 
-"""
-# list is a mutable sequency
-days=["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"]
-print(days)
-days.append("Twi")
-print(days)
-del days[len(days)-1:len(days)]
-days.reverse()
-print(days)
-"""
+indeed_result = requests.get("https://kr.indeed.com/%EC%B7%A8%EC%97%85?as_and=python&as_phr=&as_any=&as_not=&as_ttl=&as_cmp=&jt=all&st=&salary=&radius=25&l=&fromage=any&limit=50&sort=&psf=advsrch&from=advancedsearch")
 
-"""
-# tuple is an immutable sequency
-days=("Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun")
-"""
-
-# dictionary
-suyoung = {
-  "name": "Suyoung",
-  "age": 23,
-  "Korean": True,
-  "fav_food": ["삼겹살", "회", "치킨"]
-}
-
-print(suyoung)
-print(suyoung["fav_food"])
-suyoung["uni"] = "SNUST"
-print(suyoung)
+print(indeed_result.text)
